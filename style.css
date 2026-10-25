@@ -1,0 +1,120 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at center,
+        #260b2c 0%,
+        #100816 45%,
+        #030208 100%);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#heartCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.message {
+    position: absolute;
+    bottom: 9%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    text-shadow: 0 0 15px #ff38bd;
+}
+
+.message h1 {
+    font-size: 32px;
+    color: #ff66d0;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.message p {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 8px 0;
+}
+
+.message span {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #ff8cde;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px #ff38bd;
+    }
+
+    50% {
+        transform: scale(1.2);
+        text-shadow: 0 0 30px #ff38bd;
+    }
+}
+
+.carta {
+    position: absolute;
+    width: min(560px, 88vw);
+    height: min(570px, 76vh);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 38px 32px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 235, 247, 0.95),
+        rgba(255, 205, 233, 0.88)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(255, 50, 190, 0.28);
+
+    color: #792454;
+    font-family: Georgia, serif;
+    line-height: 1.8;
+    z-index: 0;
+}
+
+.carta h1 {
+    text-align: center;
+    font-size: clamp(22px, 4vw, 30px);
+    margin-bottom: 25px;
+    color: #bd388a;
+}
+
+.carta p {
+    margin-bottom: 18px;
+    font-size: clamp(13px, 2vw, 16px);
+}
+
+.carta .assinatura {
+    margin-top: 28px;
+    text-align: right;
+    font-style: italic;
+}
+
+#heartCanvas {
+    z-index: 1;
+}
+
+.message {
+    z-index: 2;
+    bottom: 4%;
+}
